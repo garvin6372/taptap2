@@ -1,0 +1,201 @@
+body {
+    background-color: #212529 !important;
+}
+
+.main-screen {
+    background: linear-gradient(180deg, rgba(16, 20, 26, 1) 15%, rgba(20, 52, 100, 1) 81%, rgba(11, 83, 180, 1) 100%);
+}
+
+.bg-coin {
+    background-image: url("/public/ui/dollar-coin.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.btn-dark-moon {
+    background: #141E30;
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);
+    background: linear-gradient(to right, #243B55, #141E30);
+    color: #fff;
+    border: 3px solid #eee;
+}
+
+button.activer {
+    background-color: #5279a5;
+}
+
+@keyframes fadeOutUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-90px);
+    }
+}
+
+.fade-out-up {
+    animation: fadeOutUp 0.5s forwards;
+    position: absolute;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: bold;
+    z-index: 1000;
+    transition: all 0.5s ease-in-out;
+}
+
+.bg-cards {
+    background-color: rgb(11, 16, 22);
+}
+
+.energy-container {
+    width: 100%;
+    background-color: #ddd;
+    /* Background of the empty bar */
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.energy-bar {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: width 0.3s ease-in-out;
+    /* Smooth transition for width change */
+}
+
+.footer {
+    /* Blue background color */
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.main-footer {
+    background-color: #3B87FF;
+}
+
+.main-footer .active {
+    background-color: #a3d4ff;
+}
+
+.other-footer {
+    background-color: #2C2C2C;
+
+}
+
+.other-footer .active {
+    background-color: #4F4F4F;
+}
+
+.footer-item {
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+    width: 65px;
+}
+
+.footer-item.active {
+
+    /* Light blue background for active item */
+    border-radius: 15px;
+    /* padding: 10px 20px; */
+    color: #00A3FF;
+    /* Text color for active item */
+}
+
+.footer-item img {
+    filter: brightness(0) invert(1);
+    /* Invert colors for the icon */
+}
+
+.footer-item div {
+    margin-top: 5px;
+}
+
+.clam-botton {
+    align-items: center;
+    background: #FFFFFF;
+    border: 0 solid #E2E8F0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    color: #1A202C;
+    display: inline-flex;
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    height: 56px;
+    justify-content: center;
+    line-height: 24px;
+    overflow-wrap: break-word;
+    padding: 24px;
+    text-decoration: none;
+    width: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 85%;
+}
+
+/* CSS */
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 85%;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #495eb0,
+    #00ffd5,
+    #002bff,
+    #1f007c
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
