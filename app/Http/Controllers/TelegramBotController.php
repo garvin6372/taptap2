@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
-use WeStacks\TeleBot\TeleBot;
 use App\Http\Controllers\Exception;
+use TelegramSDK\BotAPI\Telegram\Bot;
 
 class TelegramBotController extends Controller
 {
@@ -13,10 +13,12 @@ class TelegramBotController extends Controller
     private $bot;
     private $message_text;
     private $chat_id = 657656419;
+    // protected $telegram;
+
     //+++++++++++++++++++++++++++++++++++++++
     public function __construct()
     {
-        $this->bot = new TeleBot('AAGCuJxeGUhM5trIIP4AuZr_j4Cvy_vvbg0');
+        // $this->telegram = $telegram;
     }
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     public function index()
@@ -36,28 +38,18 @@ class TelegramBotController extends Controller
         }
     }
     // https://api.telegram.org/bot7510331040:AAGCuJxeGUhM5trIIP4AuZr_j4Cvy_vvbg0/getUpdates
+    //https://api.telegram.org/bot7510331040:AAGCuJxeGUhM5trIIP4AuZr_j4Cvy_vvbg0/setWebhook?url=https://bgmitaptap.kesug.com/telegram-message-webhook
+    //https://api.telegram.org/bot7510331040:AAGCuJxeGUhM5trIIP4AuZr_j4Cvy_vvbg0/setWebhook?url=https://webhook.site/d8b7dd69-b2ce-45d3-bbcc-c3cddf46d3ae
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    public function sendMessage(Request $request)
+    public function sendMessage()
     {
-        // try {
-            $message = $this->bot->sendMessage([
-                'chat_id'      => '657656419',
-                'text'         => 'Welcome To Code-180 Youtube Channel',
-                'reply_markup' => [
-                    'inline_keyboard' => [[[
-                        'text' => '@code-180',
-                        'url'  => 'https://www.youtube.com/@code-180/videos',
-                    ]]],
-                ],
-            ]);
-            // $message = $this->bot->sendMessage([
-            //     'chat_id' => '657656419',
-            //     'text'    => 'Welcome To Code-180 Youtube Channel',
-            // ]);
-        // } catch (Exception $e) {
-        //     $message = 'Message: ' . $e->getMessage();
-        // }
-        return Response::json($message);
-    }
 
+
+        $bot = new Bot("7510331040:AAGCuJxeGUhM5trIIP4AuZr_j4Cvy_vvbg0"); // Your bot token
+        // dd($bot);
+        $bot->sendMessage([ // Send a message
+            "chat_id" => 657656419, // Your chat id
+            "text" => "t.me/bgmi_earn_by_gd_6372_bot/bgmitap"
+        ]);
+    }
 }
